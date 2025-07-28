@@ -12,6 +12,7 @@ function Step1({ data, prompts, changeFunc, errors }) {
                         value={data.businessName}
                         onChange={(e) => changeFunc("foundation", "businessName", e.target.value)}
                     />
+                    <p>{errors.businessName}</p>
                 </div>
                 <div>
                     <label>Mission Statement:</label>
@@ -21,6 +22,7 @@ function Step1({ data, prompts, changeFunc, errors }) {
                         value={data.missionStatement}
                         onChange={(e) => changeFunc("foundation", "missionStatement", e.target.value)}
                     />
+                    <p>{errors.missionStatement}</p>
                 </div>
                 <div>
                     <label>Promise:</label>
@@ -30,6 +32,7 @@ function Step1({ data, prompts, changeFunc, errors }) {
                         value={data.promise}
                         onChange={(e) => changeFunc("foundation", "promise", e.target.value)}
                     />
+                    <p>{errors.promise}</p>
                 </div>
             </form>
             {data.businessName}

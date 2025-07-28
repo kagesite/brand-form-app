@@ -13,6 +13,15 @@ function ProgressBar({ step }) {
             {step === 1 && (
                 <p>Step {step} of 4</p>
             )}
+            {step === 2 && (
+                <p>Step {step} of 4</p>
+            )}
+            {step === 3 && (
+                <p>Step {step} of 4</p>
+            )}
+            {step === 4 && (
+                <p>Step {step} of 4</p>
+            )}
         </div>
     )
 }

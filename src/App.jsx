@@ -7,7 +7,7 @@ import { validateStep1 } from '../../../simple-brand-form/src/utils/Validation';
 import Step2 from "./components/Step2";
 
 function App() {
-    const [showStep, setShowStep] = useState(0);
+    const [showStep, setShowStep] = useState(1);
 
     const [formData, setFormData] = useState({
         foundation: {

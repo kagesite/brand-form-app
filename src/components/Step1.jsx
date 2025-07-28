@@ -1,38 +1,48 @@
 import React from 'react'
+import "../styles/Form.css"
 
 function Step1({ data, prompts, changeFunc, errors }) {
     return (
         <div>
-            <form>
-                <div>
+            <form className='form-container'>
+                <div className='question-card'>
                     <label>Business Name:</label>
-                    <p>{prompts.businessName}</p>
+                    <p className="prompt">{prompts.businessName}</p>
+                    <div className='bar'></div>
                     <input
                         type="text"
                         value={data.businessName}
                         onChange={(e) => changeFunc("foundation", "businessName", e.target.value)}
                     />
-                    <p>{errors.businessName}</p>
+                    {errors.businessName.length > 0 && (
+                         <p className='error'>{errors.businessName}</p>
+                    )}
                 </div>
-                <div>
-                    <label>Mission Statement:</label>
-                    <p>{prompts.missionStatement}</p>
+                <div className='question-card'>
+                    <label>Mission Statement</label>
+                    <p className="prompt">{prompts.missionStatement}</p>
+                    <div className='bar'></div>
                     <textarea
                         type="text"
                         value={data.missionStatement}
                         onChange={(e) => changeFunc("foundation", "missionStatement", e.target.value)}
                     />
-                    <p>{errors.missionStatement}</p>
+                    {errors.missionStatement.length > 0 && (
+                         <p className='error'>{errors.missionStatement}</p>
+                    )}
                 </div>
-                <div>
+                <div className='question-card'>
                     <label>Promise:</label>
-                    <p>{prompts.promise}</p>
+                    <p className="prompt">{prompts.promise}</p>
+                    <div className='bar'></div>
                     <textarea
                         type="text"
                         value={data.promise}
                         onChange={(e) => changeFunc("foundation", "promise", e.target.value)}
                     />
-                    <p>{errors.promise}</p>
+                    {errors.promise.length > 0 && (
+                         <p className='error'>{errors.promise}</p>
+                    )}
                 </div>
             </form>
             {data.businessName}

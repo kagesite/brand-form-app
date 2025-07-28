@@ -1,0 +1,82 @@
+.form-container {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 16px -4px #080808;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 20px;
+    max-width: 700px;
+    min-width: 500px;
+}
+
+
+.question-card {
+    background-color: white;
+    box-shadow: 0 0 16px -4px #080808;
+    padding: 12px 20px 24px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.question-card label {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.question-card input {
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 2px solid ;
+    margin-bottom: 0px;
+    border: 2px solid #080808;
+}
+.question-card input:focus {
+    outline: 2px solid #fcba03;
+    border: none;
+    margin-bottom: 4px;
+}
+
+.question-card textarea {
+    resize: none;
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 2px solid #080808;
+    margin-bottom: 0px;
+    height: 100px;
+}
+.question-card textarea:focus {
+    outline: 2px solid #fcba03;
+    border: none
+}
+
+.prompt {
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 24px;
+    color: #0049a3;
+    font-size: 16px;
+}
+
+.question-card hr {
+    border: 2px solid 080808;
+    width: 80%;
+}
+
+.bar {
+    height: 4px;
+    background-color: #080808;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+    font-weight: 600;
+    margin-bottom: 0px;
+}

@@ -45,7 +45,6 @@ function Step1({ data, prompts, changeFunc, errors }) {
                     )}
                 </div>
             </form>
-            {data.businessName}
         </div>
     )
 }

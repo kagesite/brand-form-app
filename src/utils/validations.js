@@ -59,13 +59,18 @@ export const validateStep3 = (data, setErrors) => {
     const age = Number(data.age);
     const maleAge = Number(data.genderMale);
     const femaleAge = Number(data.genderFemale);
+    const percentTotal = maleAge + femaleAge;
 
     if (age <= 1) {
         newErrors.age = "Your users are under 1 year old?"
     }
 
-    if ((maleAge + femaleAge) > 100 || maleAge === 0 && femaleAge === 0) {
+    if (percentTotal > 100 || maleAge === 0 && femaleAge === 0) {
         newErrors.genderFemale = "Your percentages can't equal over 100% and you can't leave both at 0"
+    }
+
+    if (percentTotal < 100) {
+        newErrors.genderFemale = "Your percentages have to equal 100%"
     }
 
     if (data.ethnicity === "Select") {

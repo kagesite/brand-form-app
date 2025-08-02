@@ -7,9 +7,10 @@ import Step2 from "./components/Step2";
 import { validateStep1, validateStep2, validateStep3 } from './utils/validations';
 import Step3 from './components/Step3';
 import Step4 from './components/Step4';
+import Step5 from './components/Step5';
 
 function App() {
-    const [showStep, setShowStep] = useState(4);
+    const [showStep, setShowStep] = useState(5);
 
     const [formData, setFormData] = useState({
         foundation: {
@@ -29,7 +30,7 @@ function App() {
             ethnicity: "Select",
         }
     });
-    const [formPrompts, setFormPrompts] = useState({
+    const formPrompts = {
         foundation: {
             businessName: "What is the name of the brand being built?",
             missionStatement: "_(Brand's name)_'s mission is to _(why you do what you do)_.",
@@ -45,7 +46,8 @@ function App() {
             gender: "What percentage of your users are Male or Female?",
             ethnicity: "What is the average ethnicity of your users?"
         }
-    })
+    }
+
     const [errors, setErrors] = useState({
         foundation: {
             businessName: "",
@@ -155,6 +157,33 @@ function App() {
 
     }
 
+    const handlePrevStep = () => {
+        if (showStep === 2) {
+            setShowStep(1)
+        }
+        if (showStep === 3) {
+            setShowStep(2)
+        }
+        if (showStep === 4) {
+            setShowStep(3)
+        }
+    }
+
+    const handleSubmitForm = () => {
+        // Get existing data (if any)
+        const existingData = localStorage.getItem("userForm");
+        const parsedData = existingData ? JSON.parse(existingData) : [];
+
+        // Add new form data to existing data
+        const updatedData = [...parsedData, formData];
+
+        // Store back to localStorage
+        localStorage.setItem("userForm", JSON.stringify(updatedData));
+
+        console.log("Form submitted:", formData);
+        console.log("All stored data:", updatedData);
+        setShowStep(5)
+    }
 
     return (
         <div>
@@ -186,7 +215,7 @@ function App() {
                         changeFunc={handleInputChange}
                         errors={errors.perception}
                     />
-                    <button onClick={handleExitForm}>Exit</button>
+                    <button onClick={handlePrevStep}>Prev</button>
                     <button onClick={handleNextStep}>Next</button>
                 </>
             )}
@@ -199,7 +228,7 @@ function App() {
                         changeFunc={handleInputChange}
                         errors={errors.connection}
                     />
-                    <button onClick={handleExitForm}>Exit</button>
+                    <button onClick={handlePrevStep}>Prev</button>
                     <button onClick={handleNextStep}>Next</button>
                 </>
             )}
@@ -209,8 +238,15 @@ function App() {
                     <Step4
                         data={formData}
                     />
-                    <button onClick={handleExitForm}>Exit</button>
-                    <button onClick={handleNextStep}>Submit</button>
+                    <button onClick={handlePrevStep}>Prev</button>
+                    <button onClick={handleSubmitForm}>Submit</button>
+                </>
+            )}
+            {showStep === 5 && (
+                <>
+                    <Step5
+                        func={() => setShowStep(0)}
+                    />
                 </>
             )}
 

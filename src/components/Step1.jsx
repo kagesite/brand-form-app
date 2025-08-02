@@ -5,6 +5,7 @@ function Step1({ data, prompts, changeFunc, errors }) {
     return (
         <div>
             <form className='form-container'>
+                <h2>Foundation</h2>
                 <div className='question-card'>
                     <label>Business Name:</label>
                     <p className="prompt">{prompts.businessName}</p>
@@ -15,7 +16,7 @@ function Step1({ data, prompts, changeFunc, errors }) {
                         onChange={(e) => changeFunc("foundation", "businessName", e.target.value)}
                     />
                     {errors.businessName.length > 0 && (
-                         <p className='error'>{errors.businessName}</p>
+                        <p className='error'>{errors.businessName}</p>
                     )}
                 </div>
                 <div className='question-card'>
@@ -28,7 +29,7 @@ function Step1({ data, prompts, changeFunc, errors }) {
                         onChange={(e) => changeFunc("foundation", "missionStatement", e.target.value)}
                     />
                     {errors.missionStatement.length > 0 && (
-                         <p className='error'>{errors.missionStatement}</p>
+                        <p className='error'>{errors.missionStatement}</p>
                     )}
                 </div>
                 <div className='question-card'>
@@ -41,7 +42,7 @@ function Step1({ data, prompts, changeFunc, errors }) {
                         onChange={(e) => changeFunc("foundation", "promise", e.target.value)}
                     />
                     {errors.promise.length > 0 && (
-                         <p className='error'>{errors.promise}</p>
+                        <p className='error'>{errors.promise}</p>
                     )}
                 </div>
             </form>

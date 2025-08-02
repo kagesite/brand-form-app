@@ -14,6 +14,7 @@ function Step3({ data, prompts, changeFunc, errors }) {
     return (
         <div>
             <form className='form-container'>
+                <h2>Connection</h2>
                 <div className='question-card'>
                     <label>User Age:</label>
                     <p className="prompt">{prompts.age}</p>
@@ -45,8 +46,8 @@ function Step3({ data, prompts, changeFunc, errors }) {
                             }}
                         >
                             <label style={{ fontSize: "18px" }} htmlFor="">Male: </label>
-                            <input 
-                                type="number" 
+                            <input
+                                type="number"
                                 value={data.genderMale}
                                 onChange={(e) => changeFunc("connection", "genderMale", e.target.value)}
                             />
@@ -57,8 +58,8 @@ function Step3({ data, prompts, changeFunc, errors }) {
                                 flexDirection: "column",
                             }}>
                             <label style={{ fontSize: "18px" }} htmlFor="">Female: </label>
-                            <input 
-                                type="number" 
+                            <input
+                                type="number"
                                 value={data.genderFemale}
                                 onChange={(e) => changeFunc("connection", "genderFemale", e.target.value)}
                             />
@@ -85,7 +86,7 @@ function Step3({ data, prompts, changeFunc, errors }) {
                                 value={race}
                                 key={i}
                             >{race}</option>
-                        )) }
+                        ))}
                     </select>
                     {errors.ethnicity.length > 0 && (
                         <p className='error'>{errors.ethnicity}</p>

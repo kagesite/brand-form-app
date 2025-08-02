@@ -11,6 +11,12 @@
     overflow-y: scroll;
 }
 
+.form-container h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+}
+
 
 .question-card {
     background-color: white;
@@ -64,11 +70,8 @@
     font-size: 16px;
 }
 
-.question-card hr {
-    border: 2px solid 080808;
-    width: 80%;
-}
 
+ 
 .bar {
     height: 4px;
     background-color: #080808;

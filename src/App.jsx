@@ -9,7 +9,7 @@ import Step3 from './components/Step3';
 import Step4 from './components/Step4';
 
 function App() {
-    const [showStep, setShowStep] = useState(0);
+    const [showStep, setShowStep] = useState(4);
 
     const [formData, setFormData] = useState({
         foundation: {
@@ -210,7 +210,7 @@ function App() {
                         data={formData}
                     />
                     <button onClick={handleExitForm}>Exit</button>
-                    <button onClick={handleNextStep}>Next</button>
+                    <button onClick={handleNextStep}>Submit</button>
                 </>
             )}
 

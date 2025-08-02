@@ -42,8 +42,11 @@ h2 {
     margin: 0;
 }
 
+
+
 .box-open {
     height: fit-content;
+    transition: 0.2s all;
 }
 
 .review-card {

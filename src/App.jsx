@@ -6,9 +6,10 @@ import ProgressBar from './components/progressBar';
 import Step2 from "./components/Step2";
 import { validateStep1, validateStep2, validateStep3 } from './utils/validations';
 import Step3 from './components/Step3';
+import Step4 from './components/Step4';
 
 function App() {
-    const [showStep, setShowStep] = useState(3);
+    const [showStep, setShowStep] = useState(0);
 
     const [formData, setFormData] = useState({
         foundation: {
@@ -197,6 +198,16 @@ function App() {
                         prompts={formPrompts.connection}
                         changeFunc={handleInputChange}
                         errors={errors.connection}
+                    />
+                    <button onClick={handleExitForm}>Exit</button>
+                    <button onClick={handleNextStep}>Next</button>
+                </>
+            )}
+            {showStep === 4 && (
+                <>
+                    <ProgressBar step={showStep} />
+                    <Step4
+                        data={formData}
                     />
                     <button onClick={handleExitForm}>Exit</button>
                     <button onClick={handleNextStep}>Next</button>

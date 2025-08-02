@@ -38,7 +38,7 @@ function Step4({ data }) {
                         </div>
                     )}
                 </div>
-                <div className={`review-box ${isPerceptionOpen ? 'box-open' : 'box-closed'}`}>
+                <div className={`review-box ${isPerceptionOpen ? 'open' : 'closed'}`}>
                     <div className='heading'>
                         <h3>Perception</h3> {isPerceptionOpen ?
                             <span className="icon" onClick={() => openBox(setIsPerceptionOpen)}>▲</span> : <span className="icon" onClick={() => openBox(setIsPerceptionOpen)}>▼</span>}
